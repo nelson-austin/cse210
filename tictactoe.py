@@ -1,5 +1,5 @@
 '''
-sdf
+Tic-Tac-Toe Game
 Author: Austin Nelson
 '''
 
@@ -25,7 +25,7 @@ def main():
     # show message for winner and thanks for playing
     
     player = next_player('')
-    
+    print('\nA game of tic-tac-toe:')
     board = create_board()
     
     while not (is_winner(board) or is_draw(board)):
@@ -104,7 +104,3 @@ def next_player(current):
 # run main if this has been called from the command line
 if __name__ == "__main__":
     main()
-
-#version 1 -- displays board
-
-#I can actively see where changes are in vs code
