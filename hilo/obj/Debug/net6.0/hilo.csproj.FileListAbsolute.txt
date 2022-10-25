@@ -1,0 +1,15 @@
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.csproj.AssemblyReference.cache
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.AssemblyInfoInputs.cache
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.AssemblyInfo.cs
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.csproj.CoreCompileInputs.cache
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\bin\Debug\net6.0\hilo.exe
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\bin\Debug\net6.0\hilo.deps.json
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\bin\Debug\net6.0\hilo.runtimeconfig.json
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\bin\Debug\net6.0\hilo.dll
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\bin\Debug\net6.0\hilo.pdb
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.dll
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\refint\hilo.dll
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.pdb
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\hilo.genruntimeconfig.cache
+C:\Users\nelau\OneDrive\Documents\Fall2022\cse210\hilo\obj\Debug\net6.0\ref\hilo.dll
