@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "a+ansf+MaqWi0r9QlKLqBR9JM7PB02Yl6miHlx5c3i5pBi2KvD/pCzOmY0bvBUJBvzYFHTuBjmfSkLoJK8f/9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nelau\\OneDrive\\Documents\\Fall2022\\cse210\\greed\\greed.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nelau\\.nuget\\packages\\raylib-cs\\4.2.0.1\\raylib-cs.4.2.0.1.nupkg.sha512",
+    "C:\\Users\\nelau\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
