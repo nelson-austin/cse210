@@ -21,17 +21,11 @@ namespace Unit06.Game.Scripting
             DrawLabel(cast, Constants.SCORE_GROUP, Constants.SCORE_FORMAT, stats.GetScore());
         }
 
-        // **********************************************************************************************
-        // You found the bug. Great job!
-        // **********************************************************************************************
-        // todo: fix the bug by making sure the text value is set to the appropriate variable.
         private void DrawLabel(Cast cast, string group, string format, int data)
         {
-            string theValueToDisplay = string.Format(format, data);
-            
             Label label = (Label)cast.GetFirstActor(group);
             Text text = label.GetText();
-            text.SetValue(format);
+            text.SetValue(string.Format(format, data));
             Point position = label.GetPosition();
             _videoService.DrawText(text, position);
         }
