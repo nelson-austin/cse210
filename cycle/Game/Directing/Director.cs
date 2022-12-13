@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Unit05.Game.Casting;
-using Unit05.Game.Scripting;
+using gs = Unit05.Game.Scripting;
 using Unit05.Game.Services;
 
 
@@ -30,7 +30,7 @@ namespace Unit05.Game.Directing
         /// </summary>
         /// <param name="cast">The given cast.</param>
         /// <param name="script">The given script.</param>
-        public void StartGame(Cast cast, Script script)
+        public void StartGame(Cast cast, gs.Script script)
         {
             _videoService.OpenWindow();
             while (_videoService.IsWindowOpen())
@@ -48,10 +48,10 @@ namespace Unit05.Game.Directing
         /// <param name="group">The group name.</param>
         /// <param name="cast">The cast of actors.</param>
         /// <param name="script">The script of actions.</param>
-        private void ExecuteActions(string group, Cast cast, Script script)
+        private void ExecuteActions(string group, Cast cast, gs.Script script)
         {
-            List<Action> actions = script.GetActions(group);
-            foreach(Action action in actions)
+            List<gs.Action> actions = script.GetActions(group);
+            foreach(gs.Action action in actions)
             {
                 action.Execute(cast, script);
             }

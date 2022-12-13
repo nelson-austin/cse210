@@ -10,12 +10,14 @@ namespace Unit05.Game.Scripting
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
-    /// The responsibility of HandleCollisionsAction is to handle the situation when the snake collides with its segments, or the game is over.
+    /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
+    /// collides with the food, or the snake collides with its segments, or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
     {
         private bool _isGameOver = false;
+        private string _lost;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -30,7 +32,7 @@ namespace Unit05.Game.Scripting
             if (_isGameOver == false)
             {
                 HandleSegmentCollisions(cast);
-
+                HandleGameOver(cast);
             }
         }
 
@@ -47,43 +49,38 @@ namespace Unit05.Game.Scripting
             Actor head2 = snake2.GetHead();
             List<Actor> body2 = snake2.GetBody();
 
-            
-                foreach (Actor segment in body)
+            foreach (Actor segment in body)
+            {
+                if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    if (segment.GetPosition().Equals(snake2.GetHead().GetPosition()))
-                    {
-                        if(_isGameOver == false){
-                             _isGameOver = true;
-                          HandleGameOver(cast, snake2);
-                           Constants.PLAYER_2 = Constants.WHITE;
-                        }
-                    }
+                    _isGameOver = true;
+                    _lost = "player2";
                 }
-                foreach (Actor segment in body2)
+                
+            }
+            foreach (Actor segment in body2)
+            {
+                if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    if (segment.GetPosition().Equals(snake.GetHead().GetPosition()))
-                    {
-                         if(_isGameOver == false){
-                            _isGameOver = true;
-                        HandleGameOver(cast, snake);
-                         Constants.PLAYER_1 = Constants.WHITE;
-                         }
-                    }
+                    _isGameOver = true;
+                    _lost = "player1";
                 }
-            
+                
+            }
         }
 
-        private void HandleGameOver(Cast cast, Snake snake)
+        private void HandleGameOver(Cast cast)
         {
-            
-            
-                // Snake snake = (Snake)cast.GetFirstActor("snake");
+            if (_isGameOver == true)
+            {
+                Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments = snake.GetSegments();
+                Snake snake2 = (Snake)cast.GetActors("snake")[1];
+                List<Actor> segments2 = snake2.GetSegments();
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
                 int y = Constants.MAX_Y / 2;
-               
                 Point position = new Point(x, y);
 
                 Actor message = new Actor();
@@ -91,13 +88,24 @@ namespace Unit05.Game.Scripting
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
+
                 // make everything white
-                foreach (Actor segment in segments)
+                if (_lost == "player1")
                 {
-                    segment.SetColor(Constants.WHITE);
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                } else
+                {
+                    foreach (Actor segment in segments2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
                 }
+                
             }
-        
+        }
 
     }
 }
