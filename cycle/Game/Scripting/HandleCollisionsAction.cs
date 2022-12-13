@@ -18,6 +18,7 @@ namespace Unit05.Game.Scripting
     {
         private bool _isGameOver = false;
         private string _lost;
+        private bool _collided = true;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -91,13 +92,15 @@ namespace Unit05.Game.Scripting
 
                 // make everything white
                 if (_lost == "player1")
-                {
+                {   
+                    snake.setCollided(_collided);
                     foreach (Actor segment in segments)
                     {
                         segment.SetColor(Constants.WHITE);
                     }
                 } else
                 {
+                    snake2.setCollided(_collided);
                     foreach (Actor segment in segments2)
                     {
                         segment.SetColor(Constants.WHITE);

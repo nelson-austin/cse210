@@ -11,6 +11,7 @@ namespace Unit05.Game.Casting
     public class Snake : Actor
     {
         private List<Actor> _segments = new List<Actor>();
+        private bool _collided = false;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
@@ -53,19 +54,22 @@ namespace Unit05.Game.Casting
         /// <param name="numberOfSegments">The number of segments to grow.</param>
         public void GrowTail(int numberOfSegments, Color color)
         {
-            for (int i = 0; i < numberOfSegments; i++)
+            if (!_collided)
             {
-                Actor tail = _segments.Last<Actor>();
-                Point velocity = tail.GetVelocity();
-                Point offset = velocity.Reverse();
-                Point position = tail.GetPosition().Add(offset);
+                for (int i = 0; i < numberOfSegments; i++)
+                {
+                    Actor tail = _segments.Last<Actor>();
+                    Point velocity = tail.GetVelocity();
+                    Point offset = velocity.Reverse();
+                    Point position = tail.GetPosition().Add(offset);
 
-                Actor segment = new Actor();
-                segment.SetPosition(position);
-                segment.SetVelocity(velocity);
-                segment.SetText("#");
-                segment.SetColor(color);
-                _segments.Add(segment);
+                    Actor segment = new Actor();
+                    segment.SetPosition(position);
+                    segment.SetVelocity(velocity);
+                    segment.SetText("#");
+                    segment.SetColor(color);
+                    _segments.Add(segment);
+                }
             }
         }
 
@@ -116,6 +120,16 @@ namespace Unit05.Game.Casting
                 segment.SetColor(color);
                 _segments.Add(segment);
             }
+        }
+
+
+        public bool getCollided()
+        {
+            return _collided;
+        }
+        public void setCollided(bool collided)
+        {
+            this._collided = collided;
         }
     }
 }
