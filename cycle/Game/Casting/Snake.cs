@@ -122,11 +122,17 @@ namespace Unit05.Game.Casting
             }
         }
 
-
+        /// <summary>
+        /// Returns the bool _collided. 
+        /// </summary>
         public bool getCollided()
         {
             return _collided;
         }
+
+        /// <summary>
+        /// Sets _collided to true when snakes collide.
+        /// </summary>
         public void setCollided(bool collided)
         {
             this._collided = collided;
