@@ -33,8 +33,8 @@ namespace Unit05.Game.Scripting
             
             if (i % 10 == 0)
             {
-            snake.GrowTail(1, Constants.PLAYER_1);
-            snake2.GrowTail(1, Constants.PLAYER_2);
+                snake.GrowTail(1, Constants.PLAYER_1);
+                snake2.GrowTail(1, Constants.PLAYER_2);
             }
             _videoService.ClearBuffer();
             _videoService.DrawActors(segments);
