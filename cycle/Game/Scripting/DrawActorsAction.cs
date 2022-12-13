@@ -12,6 +12,7 @@ namespace Unit05.Game.Scripting
     public class DrawActorsAction : Action
     {
         private VideoService _videoService;
+        private static int i = 0;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -30,14 +31,18 @@ namespace Unit05.Game.Scripting
             List<Actor> segments2 = snake2.GetSegments();
             List<Actor> messages = cast.GetActors("messages");
             
-            
+            if (i % 10 == 0)
+            {
             snake.GrowTail(1, Constants.PLAYER_1);
             snake2.GrowTail(1, Constants.PLAYER_2);
+            }
             _videoService.ClearBuffer();
             _videoService.DrawActors(segments);
             _videoService.DrawActors(segments2);
             _videoService.DrawActors(messages);
             _videoService.FlushBuffer();
+
+            i += 1;
         }
     }
 }
